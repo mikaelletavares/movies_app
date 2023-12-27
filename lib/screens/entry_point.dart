@@ -128,36 +128,6 @@ class _EntryPointState extends State<EntryPoint>
               offset: Offset(animation.value * 265, 0),
               child: Transform.scale(
                 scale: scalAnimation.value,
-                child: const ClipRRect(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(24),
-                  ),
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        top: 87,
-                        left: 65,
-                        child: Text(
-                          'Movies',
-                          style: textAppBarStyle,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Transform(
-            alignment: Alignment.center,
-            transform: Matrix4.identity()
-              ..setEntry(3, 2, 0.001)
-              ..rotateY(
-                  1 * animation.value - 30 * (animation.value) * pi / 180),
-            child: Transform.translate(
-              offset: Offset(animation.value * 265, 0),
-              child: Transform.scale(
-                scale: scalAnimation.value,
                 child: ClipRRect(
                   borderRadius: const BorderRadius.all(
                     Radius.circular(24),

@@ -40,6 +40,12 @@ const descriptionTextStyle = TextStyle(
   fontFamily: "Intel",
 );
 
+const smallTextStyle = TextStyle(
+  fontSize: 14,
+  color: backgroundColorLight,
+  fontFamily: "Intel",
+);
+
 const movieTextStyleLeft = TextStyle(
   fontSize: 16,
   color: backgroundColorLight,

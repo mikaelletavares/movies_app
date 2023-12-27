@@ -7,9 +7,9 @@ class MovieViewModel extends ChangeNotifier {
   final service = MovieService();
   late List<Movie> movies;
 
-  Future<List<Movie>> getMovies() async {
+  Future<List<Movie>> getMovies({String? genre}) async {
     try {
-      movies = await service.getMovies();
+      movies = await service.getMovies(genre: genre);
       for (var movie in movies) {
         print('Title: ${movie.title}');
       }
