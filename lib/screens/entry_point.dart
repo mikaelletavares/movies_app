@@ -135,7 +135,7 @@ class _EntryPointState extends State<EntryPoint>
                   child: Stack(
                     children: [
                       Positioned(
-                        top: 75,
+                        top: 50,
                         right: 10,
                         child: Container(
                           width: 40,

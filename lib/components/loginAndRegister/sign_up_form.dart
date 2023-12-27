@@ -49,19 +49,16 @@ class _SignUpFormState extends State<SignUpForm> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const TextFieldComponent(
+              TextFieldComponent(
                 title: 'Nome',
-                icon: Icons.person,
                 isObscure: false,
               ),
-              const TextFieldComponent(
+              TextFieldComponent(
                 title: 'Email',
-                icon: Icons.email,
                 isObscure: false,
               ),
-              const TextFieldComponent(
+              TextFieldComponent(
                 title: 'Senha',
-                icon: Icons.lock,
                 isObscure: true,
               ),
               Padding(

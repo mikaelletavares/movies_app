@@ -24,7 +24,7 @@ class MovieScreen extends StatelessWidget {
                 children: [
                   Text(
                     'Terror',
-                    style: movieTitleTextStyle,
+                    style: movieGenderTextStyle,
                   ),
                   SizedBox(
                     height: 10,
@@ -35,7 +35,7 @@ class MovieScreen extends StatelessWidget {
                   ),
                   Text(
                     'Comédia',
-                    style: movieTitleTextStyle,
+                    style: movieGenderTextStyle,
                   ),
                   SizedBox(
                     height: 10,
@@ -46,7 +46,7 @@ class MovieScreen extends StatelessWidget {
                   ),
                   Text(
                     'Romance',
-                    style: movieTitleTextStyle,
+                    style: movieGenderTextStyle,
                   ),
                   SizedBox(
                     height: 10,

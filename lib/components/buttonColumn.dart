@@ -20,6 +20,11 @@ class ButtonColumn extends StatefulWidget {
 class _ButtonColumnState extends State<ButtonColumn> {
   bool isSelected = false;
 
+  @override
+  void initState() {
+    super.initState();
+  }
+
   void _onIconClicked() {
     isSelected = !isSelected;
   }
@@ -28,7 +33,9 @@ class _ButtonColumnState extends State<ButtonColumn> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        _onIconClicked();
+        setState(() {
+          _onIconClicked();
+        });
       },
       child: Column(
         children: [

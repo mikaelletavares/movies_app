@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/utils/constants.dart';
 
-class TextFieldComponent extends StatelessWidget {
+class TextFieldComponent extends StatefulWidget {
   final String title;
-  final IconData icon;
   final bool isObscure;
 
   const TextFieldComponent({
-    super.key,
+    Key? key,
     required this.title,
-    required this.icon,
     required this.isObscure,
-  });
+  }) : super(key: key);
+
+  @override
+  _TextFieldComponentState createState() => _TextFieldComponentState();
+}
+
+class _TextFieldComponentState extends State<TextFieldComponent> {
+  bool _obscureText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +24,7 @@ class TextFieldComponent extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          title,
+          widget.title,
           style: const TextStyle(
             color: Colors.black54,
           ),
@@ -27,7 +32,7 @@ class TextFieldComponent extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: 8, bottom: 16),
           child: TextFormField(
-            obscureText: isObscure,
+            obscureText: widget.isObscure ? _obscureText : false,
             validator: (value) {
               if (value!.isEmpty) {
                 return "";
@@ -35,10 +40,20 @@ class TextFieldComponent extends StatelessWidget {
               return null;
             },
             decoration: InputDecoration(
-              prefixIcon: Icon(
-                icon,
-                color: backgroundColorDark,
-              ),
+              suffixIcon: widget.isObscure
+                  ? IconButton(
+                      icon: Icon(
+                        _obscureText ? Icons.visibility : Icons.visibility_off,
+                        color: backgroundColorDark,
+                      ),
+                      onPressed: () {
+                        // Alternar a visibilidade da senha
+                        setState(() {
+                          _obscureText = !_obscureText;
+                        });
+                      },
+                    )
+                  : null,
             ),
           ),
         ),

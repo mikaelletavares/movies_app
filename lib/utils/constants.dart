@@ -14,6 +14,14 @@ const movieTitleTextStyle = TextStyle(
   color: backgroundColorLight,
 );
 
+const movieGenderTextStyle = TextStyle(
+  fontSize: 30,
+  fontWeight: FontWeight.w700,
+  fontFamily: "Poppins",
+  height: 1.2,
+  color: backgroundColorLight,
+);
+
 const movieTitleTextStyleDark = TextStyle(
   fontSize: 40,
   fontWeight: FontWeight.w700,
@@ -71,5 +79,13 @@ const movieTextStyleBold = TextStyle(
   fontWeight: FontWeight.w700,
   fontFamily: "Poppins",
   color: backgroundColorLight,
+  overflow: TextOverflow.ellipsis,
+);
+
+const movieTextStyleBoldDark = TextStyle(
+  fontSize: 17,
+  fontWeight: FontWeight.w700,
+  fontFamily: "Poppins",
+  color: backgroundColorDark,
   overflow: TextOverflow.ellipsis,
 );

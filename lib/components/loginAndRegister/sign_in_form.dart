@@ -96,14 +96,12 @@ class _SignInFormState extends State<SignInForm> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const TextFieldComponent(
-                title: 'Email',
-                icon: Icons.email,
+              TextFieldComponent(
                 isObscure: false,
+                title: 'Email',
               ),
-              const TextFieldComponent(
+              TextFieldComponent(
                 title: 'Senha',
-                icon: Icons.lock,
                 isObscure: true,
               ),
               Padding(

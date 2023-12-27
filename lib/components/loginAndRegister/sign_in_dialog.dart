@@ -15,7 +15,7 @@ void showCustomDialogSignIn(BuildContext context,
     pageBuilder: (_, __, ___) {
       return Center(
         child: Container(
-          height: 550,
+          height: 580,
           margin: const EdgeInsets.symmetric(horizontal: 16),
           padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 24),
           decoration: BoxDecoration(
@@ -35,93 +35,98 @@ void showCustomDialogSignIn(BuildContext context,
             ],
           ),
           child: Scaffold(
-            body: Stack(
-              clipBehavior: Clip.none,
-              children: [
-                SingleChildScrollView(
-                  child: Column(
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: IconButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: const Icon(Icons.close)),
+                  ),
+                  Stack(
+                    clipBehavior: Clip.none,
                     children: [
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      const Text(
-                        "Entrar",
-                        style: movieTitleTextStyleDark,
-                      ),
-                      const SignInForm(),
-                      const Row(
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Expanded(
-                            child: Divider(),
+                          const Text(
+                            "Já possui uma conta?",
+                            style: movieTextStyleBoldDark,
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          const SignInForm(),
+                          const Row(
+                            children: [
+                              Expanded(
+                                child: Divider(),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 16),
+                                child: Text(
+                                  "OR",
+                                  style: TextStyle(
+                                    color: Colors.black26,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+                              Expanded(child: Divider()),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 10,
                           ),
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 16),
-                            child: Text(
-                              "OR",
-                              style: TextStyle(
-                                color: Colors.black26,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                          Expanded(child: Divider()),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8, bottom: 24),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: backgroundColorDark,
-                            ),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(10),
-                              topRight: Radius.circular(25),
-                              bottomRight: Radius.circular(25),
-                              bottomLeft: Radius.circular(25),
-                            ),
-                          ),
-                          child: ElevatedButton(
-                            onPressed: () {
-                              showCustomDialogSignUp(
-                                context,
-                                onValue: (_) {},
-                              );
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: backgroundColorLight,
-                              minimumSize: const Size(double.infinity, 56),
-                              shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.only(
+                            padding: const EdgeInsets.only(top: 8, bottom: 24),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: backgroundColorDark,
+                                ),
+                                borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(10),
                                   topRight: Radius.circular(25),
                                   bottomRight: Radius.circular(25),
                                   bottomLeft: Radius.circular(25),
                                 ),
                               ),
-                            ),
-                            child: const Text(
-                              'Criar Conta',
-                              style: buttonTextStyleDark,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  showCustomDialogSignUp(
+                                    context,
+                                    onValue: (_) {},
+                                  );
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: backgroundColorLight,
+                                  minimumSize: const Size(double.infinity, 56),
+                                  shape: const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      topRight: Radius.circular(25),
+                                      bottomRight: Radius.circular(25),
+                                      bottomLeft: Radius.circular(25),
+                                    ),
+                                  ),
+                                ),
+                                child: const Text(
+                                  'Criar Conta',
+                                  style: buttonTextStyleDark,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
+                        ],
                       ),
                     ],
                   ),
-                ),
-                Positioned(
-                  right: 1,
-                  child: IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      icon: const Icon(Icons.close)),
-                )
-              ],
+                ],
+              ),
             ),
           ),
         ),

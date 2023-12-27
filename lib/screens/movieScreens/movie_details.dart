@@ -125,7 +125,7 @@ class MovieDetails extends StatelessWidget {
                         ),
                         ButtonColumn(
                           text: 'Favoritos',
-                          defaultIcon: Icons.favorite_border,
+                          defaultIcon: Icons.star_border,
                           selectedIcon: Icons.favorite,
                         ),
                       ],
