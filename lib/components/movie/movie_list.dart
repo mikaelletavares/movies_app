@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/components/movie_card.dart';
-import 'package:movies_app/components/movie_details.dart';
+import 'package:movies_app/components/movie/movie_card.dart';
+import 'package:movies_app/components/movie/movie_details.dart';
 import 'package:movies_app/model/movie.dart';
 import 'package:movies_app/screens/movieScreens/movie_view_model.dart';
 import 'package:provider/provider.dart';

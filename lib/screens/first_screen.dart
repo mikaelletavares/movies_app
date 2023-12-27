@@ -1,7 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:movies_app/components/animated_btn.dart';
-import 'package:movies_app/components/sign_in_dialog.dart';
+import 'package:movies_app/components/loginAndRegister/sign_in_dialog.dart';
+import 'package:movies_app/components/loginAndRegister/sign_up_dialog.dart';
 import 'package:movies_app/utils/constants.dart';
 import 'package:rive/rive.dart';
 
@@ -84,7 +85,7 @@ class _FirstScreenState extends State<FirstScreen> {
                             setState(() {
                               isShowSignInDialog = true;
                             });
-                            showCustomDialog(
+                            showCustomDialogSignIn(
                               context,
                               onValue: (_) {},
                             );
@@ -110,7 +111,7 @@ class _FirstScreenState extends State<FirstScreen> {
                             setState(() {
                               isShowSignInDialog = true;
                             });
-                            showCustomDialog(
+                            showCustomDialogSignUp(
                               context,
                               onValue: (_) {},
                             );

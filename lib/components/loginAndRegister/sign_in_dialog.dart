@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:movies_app/components/loginAndRegister/sign_up_dialog.dart';
 import 'package:movies_app/utils/constants.dart';
 
 import 'sign_in_form.dart';
 
-void showCustomDialog(BuildContext context, {required ValueChanged onValue}) {
+void showCustomDialogSignIn(BuildContext context,
+    {required ValueChanged onValue}) {
   showGeneralDialog(
     context: context,
     barrierLabel: "Barrier",
@@ -83,7 +85,12 @@ void showCustomDialog(BuildContext context, {required ValueChanged onValue}) {
                             ),
                           ),
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              showCustomDialogSignUp(
+                                context,
+                                onValue: (_) {},
+                              );
+                            },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: backgroundColorLight,
                               minimumSize: const Size(double.infinity, 56),
@@ -122,11 +129,6 @@ void showCustomDialog(BuildContext context, {required ValueChanged onValue}) {
     },
     transitionBuilder: (_, anim, __, child) {
       Tween<Offset> tween;
-      // if (anim.status == AnimationStatus.reverse) {
-      //   tween = Tween(begin: const Offset(0, 1), end: Offset.zero);
-      // } else {
-      //   tween = Tween(begin: const Offset(0, -1), end: Offset.zero);
-      // }
 
       tween = Tween(begin: const Offset(0, -1), end: Offset.zero);
 
@@ -134,10 +136,6 @@ void showCustomDialog(BuildContext context, {required ValueChanged onValue}) {
         position: tween.animate(
           CurvedAnimation(parent: anim, curve: Curves.easeInOut),
         ),
-        // child: FadeTransition(
-        //   opacity: anim,
-        //   child: child,
-        // ),
         child: child,
       );
     },

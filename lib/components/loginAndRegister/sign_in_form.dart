@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movies_app/components/text_field.dart';
 import 'package:movies_app/screens/entry_point.dart';
 import 'package:movies_app/utils/constants.dart';
 import 'package:rive/rive.dart';
@@ -9,7 +10,7 @@ class SignInForm extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<SignInForm> createState() => _SignInFormState();
+  _SignInFormState createState() => _SignInFormState();
 }
 
 class _SignInFormState extends State<SignInForm> {
@@ -95,52 +96,13 @@ class _SignInFormState extends State<SignInForm> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                "Email",
-                style: TextStyle(
-                  color: Colors.black54,
-                ),
+              const TextFieldComponent(
+                title: 'Email',
+                icon: Icons.email,
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 8, bottom: 16),
-                child: TextFormField(
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return "";
-                    }
-                    return null;
-                  },
-                  keyboardType: TextInputType.emailAddress,
-                  textInputAction: TextInputAction.next,
-                  decoration: const InputDecoration(
-                    prefixIcon:
-                        Icon(Icons.email_rounded, color: backgroundColorDark),
-                  ),
-                ),
-              ),
-              const Text(
-                "Password",
-                style: TextStyle(
-                  color: Colors.black54,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 8, bottom: 16),
-                child: TextFormField(
-                  obscureText: true,
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return "";
-                    }
-                    return null;
-                  },
-                  decoration: const InputDecoration(
-                    prefixIcon: Icon(
-                      Icons.lock_rounded,
-                      color: backgroundColorDark,
-                    ),
-                  ),
-                ),
+              const TextFieldComponent(
+                title: 'Senha',
+                icon: Icons.lock,
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 8, bottom: 24),
