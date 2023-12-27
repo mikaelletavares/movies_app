@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movies_app/components/buttonColumn.dart';
 import 'package:movies_app/model/movie.dart';
 import 'package:movies_app/screens/movieScreens/movie_view_model.dart';
 import 'package:movies_app/utils/constants.dart';
@@ -37,12 +38,6 @@ class MovieDetails extends StatelessWidget {
             appBar: AppBar(
               backgroundColor: const Color(0xFF0B0D18),
               foregroundColor: backgroundColorLight,
-              actions: [
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.favorite_border),
-                ),
-              ],
             ),
             body: SingleChildScrollView(
               child: Padding(
@@ -113,6 +108,27 @@ class MovieDetails extends StatelessWidget {
                           ),
                         ],
                       ),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ButtonColumn(
+                          text: 'Minha Lista',
+                          defaultIcon: Icons.add,
+                          selectedIcon: Icons.check,
+                        ),
+                        SizedBox(
+                          width: 30,
+                        ),
+                        ButtonColumn(
+                          text: 'Favoritos',
+                          defaultIcon: Icons.favorite_border,
+                          selectedIcon: Icons.favorite,
+                        ),
+                      ],
                     ),
                     const SizedBox(
                       height: 15,
