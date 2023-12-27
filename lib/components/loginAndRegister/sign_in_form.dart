@@ -99,10 +99,12 @@ class _SignInFormState extends State<SignInForm> {
               const TextFieldComponent(
                 title: 'Email',
                 icon: Icons.email,
+                isObscure: false,
               ),
               const TextFieldComponent(
                 title: 'Senha',
                 icon: Icons.lock,
+                isObscure: true,
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 8, bottom: 24),

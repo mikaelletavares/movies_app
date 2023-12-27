@@ -4,11 +4,13 @@ import 'package:movies_app/utils/constants.dart';
 class TextFieldComponent extends StatelessWidget {
   final String title;
   final IconData icon;
+  final bool isObscure;
 
   const TextFieldComponent({
     super.key,
     required this.title,
     required this.icon,
+    required this.isObscure,
   });
 
   @override
@@ -25,7 +27,7 @@ class TextFieldComponent extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: 8, bottom: 16),
           child: TextFormField(
-            obscureText: true,
+            obscureText: isObscure,
             validator: (value) {
               if (value!.isEmpty) {
                 return "";
